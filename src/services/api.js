@@ -12,7 +12,7 @@ function getToken() {
 export async function apiFetch(path, options = {}) {
   const token = getToken();
 
-  const res = await fetch(`${BASE}/api${path}`, {
+  const res = await fetch(`${BASE}${path}`, {
     ...options,
     headers: {
       'Content-Type': 'application/json',
