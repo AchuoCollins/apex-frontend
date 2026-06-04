@@ -1,0 +1,1 @@
+import{r as t}from"./react-vendor-0RUymrgg.js";import{M as e}from"./index-C17L4gn_.js";function i(){const r=t.useContext(e);if(!r)throw new Error("useMetrics must be used within MetricsProvider");return r}export{i as u};
