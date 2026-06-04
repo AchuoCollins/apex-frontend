@@ -1,0 +1,78 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  transition: opacity var(--transition-fast);
+}
+.logo:hover { opacity: 0.88; }
+
+/* Mark — square with stylised peak */
+.mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.markSvg { width: 100%; height: 100%; display: block; }
+.markBg {
+  fill: var(--color-accent);
+  stroke: rgba(0, 0, 0, 0.08);
+  stroke-width: 0.5;
+}
+.markStroke {
+  stroke: #000;
+}
+
+/* Wordmark */
+.wordWrap {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.wordStacked .wordmark { font-size: inherit; }
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-primary);
+  background: linear-gradient(180deg, var(--color-text-primary) 0%, var(--color-text-secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.tagline {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-text-muted);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Sizes — control mark + wordmark together */
+.size_sm .mark     { width: 22px; height: 22px; }
+.size_sm .wordmark { font-size: 14px; }
+.size_sm .tagline  { font-size: 8px; }
+
+.size_md .mark     { width: 30px; height: 30px; }
+.size_md .wordmark { font-size: 18px; }
+.size_md .tagline  { font-size: 9px; }
+
+.size_lg .mark     { width: 40px; height: 40px; }
+.size_lg .wordmark { font-size: 24px; }
+.size_lg .tagline  { font-size: 10px; }
+
+.size_xl .mark     { width: 56px; height: 56px; }
+.size_xl .wordmark { font-size: 36px; letter-spacing: 0.14em; }
+.size_xl .tagline  { font-size: 11px; letter-spacing: 0.22em; }

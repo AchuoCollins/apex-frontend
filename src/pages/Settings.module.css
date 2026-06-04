@@ -1,0 +1,138 @@
+﻿.page { display: flex; flex-direction: column; gap: var(--space-6); }
+
+/* Header */
+.header { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-5); flex-wrap: wrap; }
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: 36px; font-weight: 900;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--color-text-primary);
+}
+.pageSub {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-2);
+  max-width: 480px; line-height: 1.6;
+}
+
+/* Section */
+.section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+.sectionHead {
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-raised);
+}
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--color-text-primary);
+}
+.sectionSub { font-size: 12px; color: var(--color-text-muted); margin-top: 3px; }
+
+/* List of rows */
+.list { display: flex; flex-direction: column; }
+.row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-5);
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+.row:last-child { border-bottom: none; }
+
+.rowText { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.rowTitle {
+  font-family: var(--font-heading);
+  font-size: 13px; font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: 0.02em;
+}
+.rowSub {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* Event details block (conditional) */
+.eventBlock {
+  padding: var(--space-5) var(--space-6);
+  background: var(--color-accent-subtle);
+  border-bottom: 1px solid var(--color-border);
+  display: flex; flex-direction: column;
+  gap: var(--space-4);
+  animation: pop 0.25s ease;
+}
+@keyframes pop { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+.fieldGrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+.field { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+.fieldLabel {
+  font-family: var(--font-heading);
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+}
+.input {
+  height: 42px;
+  padding: 0 var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 13px;
+  outline: none;
+  width: 100%;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-subtle);
+}
+
+/* Status grid */
+.statusGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-6);
+}
+.statusCard {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+.statusCardActive {
+  border-color: rgba(var(--color-accent-rgb), 0.35);
+  background: var(--color-accent-subtle);
+}
+.statusIcon { font-size: 22px; flex-shrink: 0; }
+.statusBody { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.statusLabel {
+  font-family: var(--font-heading);
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+.statusValue {
+  font-family: var(--font-heading);
+  font-size: 14px; font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .row { flex-direction: column; align-items: flex-start; }
+  .fieldGrid    { grid-template-columns: 1fr; }
+  .statusGrid   { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .statusGrid { grid-template-columns: 1fr; }
+}

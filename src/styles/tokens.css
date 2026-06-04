@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+/* ──────────────────────────────────────────────────────────────────────────
+   APEX Design Tokens
+   Default theme is dark; light theme is applied via [data-theme="light"]
+   on the <html> element by the ThemeContext.
+   ────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Theme: Dark (default) ── */
+  --color-bg:             #0B0F17;
+  --color-surface:        #141A24;
+  --color-surface-raised: #1B2230;
+  --color-border:         #232B3B;
+  --color-border-strong:  #354156;
+
+  /* Primary (teal) — main brand accent */
+  --color-accent:         #00E5A8;
+  --color-accent-hover:   #33EBBA;
+  --color-accent-dim:     #00A37A;
+  --color-accent-rgb:     0, 229, 168;      /* used for rgba(var(--color-accent-rgb), ...) */
+  --color-accent-glow:    rgba(0, 229, 168, 0.18);
+  --color-accent-subtle:  rgba(0, 229, 168, 0.08);
+
+  /* Secondary accent (cyan) — links, highlights, charts */
+  --color-accent-2:        #00C2FF;
+  --color-accent-2-subtle: rgba(0, 194, 255, 0.10);
+
+  --color-text-primary:   #FFFFFF;
+  --color-text-secondary: #B7BECB;
+  --color-text-muted:     #6E7689;
+
+  --color-danger:         #FF4D5E;
+  --color-danger-subtle:  rgba(255, 77, 94, 0.10);
+  --color-warning:        #FFB830;
+  --color-warning-subtle: rgba(255, 184, 48, 0.10);
+  --color-success:        #4DDB8A;
+  --color-success-subtle: rgba(77, 219, 138, 0.10);
+
+  /* Shadows */
+  --shadow-card:   0 1px 3px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--color-border);
+  --shadow-raised: 0 4px 16px rgba(0, 0, 0, 0.50), 0 0 0 1px var(--color-border-strong);
+  --shadow-accent: 0 0 20px var(--color-accent-glow);
+  --shadow-danger: 0 0 20px rgba(255, 77, 94, 0.15);
+
+  /* Typography */
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-heading: 'Barlow', sans-serif;
+  --font-body: 'DM Mono', monospace;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+
+  /* Transitions */
+  --transition-fast: 120ms ease;
+  --transition-base: 220ms ease;
+  --transition-slow: 380ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --sidebar-width: 240px;
+  --topbar-height: 60px;
+  --content-max: 1200px;
+
+  color-scheme: dark;
+}
+
+/* ── Theme: Light ── */
+[data-theme="light"] {
+  --color-bg:             #F8FAFC;
+  --color-surface:        #FFFFFF;
+  --color-surface-raised: #F1F5F9;
+  --color-border:         #E2E8F0;
+  --color-border-strong:  #CBD5E1;
+
+  /* Primary (deeper teal for AA contrast on light bg) */
+  --color-accent:         #00C48C;
+  --color-accent-hover:   #00A876;
+  --color-accent-dim:     #007A55;
+  --color-accent-rgb:     0, 196, 140;
+  --color-accent-glow:    rgba(0, 196, 140, 0.20);
+  --color-accent-subtle:  rgba(0, 196, 140, 0.10);
+
+  /* Secondary accent (deeper sky-blue for AA contrast on light bg) */
+  --color-accent-2:        #0284C7;
+  --color-accent-2-subtle: rgba(2, 132, 199, 0.10);
+
+  --color-text-primary:   #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted:     #94A3B8;
+
+  --color-danger:         #DC2626;
+  --color-danger-subtle:  rgba(220, 38, 38, 0.10);
+  --color-warning:        #D97706;
+  --color-warning-subtle: rgba(217, 119, 6, 0.10);
+  --color-success:        #16A34A;
+  --color-success-subtle: rgba(22, 163, 74, 0.10);
+
+  --shadow-card:   0 1px 3px rgba(15, 23, 42, 0.08), 0 0 0 1px var(--color-border);
+  --shadow-raised: 0 8px 24px rgba(15, 23, 42, 0.10), 0 0 0 1px var(--color-border-strong);
+  --shadow-accent: 0 0 20px var(--color-accent-glow);
+
+  color-scheme: light;
+}
+
+/* Smooth theme transition — opt-in via [data-theme-transition] on <html>.
+   The ThemeContext adds it briefly while toggling so animations don't fight
+   the rest of the UI. */
+html[data-theme-transition],
+html[data-theme-transition] body,
+html[data-theme-transition] :not(svg):not(path):not(circle):not(rect):not(line):not(polygon):not(polyline) {
+  transition:
+    background-color var(--transition-base),
+    border-color     var(--transition-base),
+    color            var(--transition-fast) !important;
+}

@@ -1,0 +1,82 @@
+/* ── Segmented pill (icon-only or labelled) ── */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  gap: 2px;
+}
+.pillBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-radius: 999px;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+  padding: 0 10px;
+}
+.pillBtn:hover { color: var(--color-text-primary); }
+.pillBtn:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--color-accent-subtle); }
+.pillBtnActive {
+  background: var(--color-accent) !important;
+  color: var(--color-bg) !important;
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.pillLabel {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Icon-only sizes (no label text) */
+.size_md .pillBtn { width: 30px; height: 30px; padding: 0; }
+.size_sm .pillBtn { width: 24px; height: 24px; padding: 0; }
+
+/* When labelled, override width so labels can render */
+.pillLabelled.size_md .pillBtn { width: auto; height: 30px; padding: 0 12px; }
+.pillLabelled.size_sm .pillBtn { width: auto; height: 24px; padding: 0 10px; }
+
+/* ── Single-thumb switch variant ── */
+.switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  cursor: pointer;
+  padding: 2px;
+  outline: none;
+  transition: background-color var(--transition-base), border-color var(--transition-base);
+}
+.switch:focus-visible { box-shadow: 0 0 0 3px var(--color-accent-subtle); }
+.switchThumb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border-radius: 50%;
+  transition: transform var(--transition-slow);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+.size_md.switch { width: 50px; height: 28px; }
+.size_md .switchThumb { width: 22px; height: 22px; }
+.switchDark.size_md  .switchThumb { transform: translateX(22px); }
+.switchLight.size_md .switchThumb { transform: translateX(0); }
+
+.size_sm.switch { width: 38px; height: 22px; }
+.size_sm .switchThumb { width: 16px; height: 16px; }
+.switchDark.size_sm  .switchThumb { transform: translateX(16px); }
+.switchLight.size_sm .switchThumb { transform: translateX(0); }
