@@ -1,5 +1,9 @@
 // services/api.js  — base fetch wrapper pointing at FastAPI backend
-const BASE = (import.meta.env.VITE_API_URL ?? 'http://localhost:8000/api').replace(/\/+$/, '');
+const BASE = import.meta.env.VITE_API_URL;
+
+if (!BASE) {
+  throw new Error("VITE_API_URL is missing in production environment");
+}
 
 function getToken() {
   try {
