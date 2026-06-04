@@ -1,3 +1,14 @@
+const BASE = import.meta.env.VITE_API_URL;
+
+function getToken() {
+  try {
+    const u = JSON.parse(localStorage.getItem('pa_user') ?? '{}');
+    return u.token ?? null;
+  } catch {
+    return null;
+  }
+}
+
 export async function apiFetch(path, options = {}) {
   const token = getToken();
 
